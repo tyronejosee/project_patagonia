@@ -1,0 +1,2 @@
+export const GOOGLE_MAPS_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11364.69741029806!2d-72.3364273!3d-39.636402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96144898c635df0d%3A0x63351988892787c8!2sCaba%C5%88as%20Parque%20Del%20Lago!5e0!3m2!1ses!2scl!4v1709400000000!5m2!1ses!2scl";
