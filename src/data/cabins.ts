@@ -26,8 +26,7 @@ export const cabins: Cabin[] = [
     title: "Cabaña Alaska",
     description:
       "Ubicada en el corazón de Malalcahuello, Alaska ofrece una experiencia de montaña inigualable. Diseñada con maderas nobles y grandes ventanales que permiten una conexión total con el entorno nevado.",
-    shortDescription:
-      "Refugio cálido con vistas espectaculares a la cordillera",
+    shortDescription: "Refugio cálido con vistas espectaculares a la cordillera",
     mainImage: "/alaska/Alaska-foto.jpg",
     gallery: [
       "/alaska/Alaska-foto.jpg",
@@ -191,8 +190,7 @@ export const cabins: Cabin[] = [
     title: "Cabaña Woods",
     description:
       "Woods es un refugio contemporáneo que parece flotar entre los árboles. Su diseño minimalista y acogedor invita a la desconexión total y el descanso profundo.",
-    shortDescription:
-      "Diseño minimalista integrado perfectamente con el bosque",
+    shortDescription: "Diseño minimalista integrado perfectamente con el bosque",
     mainImage: "/woods/540995218_18051919616627438_5240315733269142835_n.jpg",
     gallery: [
       "/woods/540995218_18051919616627438_5240315733269142835_n.jpg",
