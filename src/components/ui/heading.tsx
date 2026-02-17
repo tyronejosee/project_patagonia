@@ -24,8 +24,7 @@ const headingVariants = cva("font-bold tracking-tight", {
 });
 
 export interface HeadingProps
-  extends
-    React.HTMLAttributes<HTMLHeadingElement>,
+  extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   underline?: boolean;
@@ -51,11 +50,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     const Tag = as || (level as "h1" | "h2" | "h3" | "h4") || "h2";
 
     const content = (
-      <Tag
-        ref={ref}
-        className={cn(headingVariants({ level, align, className }))}
-        {...props}
-      >
+      <Tag ref={ref} className={cn(headingVariants({ level, align, className }))} {...props}>
         {children}
       </Tag>
     );
@@ -65,17 +60,11 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         <div
           className={cn(
             "flex flex-col gap-4",
-            align === "center"
-              ? "items-center"
-              : align === "right"
-                ? "items-end"
-                : "items-start",
+            align === "center" ? "items-center" : align === "right" ? "items-end" : "items-start",
           )}
         >
           {content}
-          <div
-            className={cn("h-1 rounded-full", underlineWidth, underlineColor)}
-          />
+          <div className={cn("h-1 rounded-full", underlineWidth, underlineColor)} />
         </div>
       );
     }

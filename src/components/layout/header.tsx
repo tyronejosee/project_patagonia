@@ -3,13 +3,15 @@
 import { Menu, Trees, X } from "lucide-react";
 import Link from "next/link";
 
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/config/navigation";
 import { useHeader } from "@/hooks/use-header";
 import { cn } from "@/lib/utils";
 
 export function Header() {
-  const { isScrolled, isMobileMenuOpen, closeMobileMenu, openMobileMenu } = useHeader();
+  const { isScrolled, isMobileMenuOpen, closeMobileMenu, openMobileMenu } =
+    useHeader();
 
   return (
     <>
@@ -21,10 +23,8 @@ export function Header() {
       >
         <div
           className={cn(
-            "relative overflow-hidden rounded-2xl border border-white/20 shadow-lg transition-all duration-500",
-            isScrolled
-              ? "bg-white/95 backdrop-blur-xl shadow-white/10 shadow-2xl"
-              : "bg-white/80 backdrop-blur-md shadow-white/10",
+            "relative overflow-hidden backdrop-blur-lg rounded-2xl shadow hover:shadow-lg transition-all duration-500",
+            isScrolled ? "bg-white/80" : "bg-white/50",
           )}
         >
           <div
@@ -40,12 +40,16 @@ export function Header() {
             >
               <div className="relative">
                 <div className="absolute -inset-1 rounded-full bg-primary/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <Trees className="h-8 w-8 text-primary relative" aria-hidden="true" />
+                <Trees
+                  className="h-8 w-8 text-primary relative"
+                  aria-hidden="true"
+                />
               </div>
-              <span className="text-xl font-bold tracking-tight text-primary">The Cabins</span>
+              <span className="text-xl font-bold tracking-tight text-primary">
+                The Cabins
+              </span>
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden lg:block" aria-label="Navegación principal">
               <ul className="flex gap-1">
                 {NAV_LINKS.map((link) => (
@@ -62,16 +66,16 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <Button
+              <WhatsAppButton
                 size="lg"
-                className="hidden lg:inline-flex rounded-full bg-primary px-6 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                Reservar Ahora
-              </Button>
+                variant="section"
+                buttonText="Reservar Ahora"
+                className="hidden lg:inline-flex"
+              />
 
               <Button
                 variant="ghost"
-                size="icon"
+                size="sm"
                 className="lg:hidden"
                 onClick={openMobileMenu}
                 aria-expanded={isMobileMenuOpen}
@@ -85,17 +89,15 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div id="mobile-menu" className="fixed inset-0 z-50 lg:hidden">
-          {/* Overlay */}
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
 
-          <aside className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl animate-in slide-in-from-right duration-300">
+          <aside className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-xl shadow-2xl rounded-l-3xl animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between p-4 border-b">
               <h2 className="text-lg font-bold text-primary">Menú</h2>
               <Button
@@ -124,7 +126,9 @@ export function Header() {
                 ))}
               </ul>
               <div className="mt-6 px-4">
-                <Button className="w-full rounded-full bg-primary">Reservar Ahora</Button>
+                <Button className="w-full rounded-full bg-primary">
+                  Reservar Ahora
+                </Button>
               </div>
             </nav>
           </aside>
