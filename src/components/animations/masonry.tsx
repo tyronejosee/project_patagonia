@@ -252,26 +252,26 @@ export function Masonry({
           onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
         >
           <div
-            className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-[10px]"
+            className="relative w-full h-full bg-cover bg-center rounded-2xl uppercase text-[10px] leading-[10px]"
             style={{ backgroundImage: `url(${item.img})` }}
           >
             {colorShiftOnHover && (
-              <div className="color-overlay absolute inset-0 rounded-[10px] bg-linear-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
+              <div className="color-overlay absolute inset-0 rounded-2xl bg-linear-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
             )}
           </div>
         </button>
       ))}
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-(--breakpoint-lg) border-none bg-transparent p-0 shadow-none outline-hidden">
+        <DialogContent className="max-w-5xl border-none bg-transparent p-0 shadow-none outline-hidden data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-40 data-[state=open]:slide-in-from-left-1/2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-bottom-40 data-[state=closed]:slide-out-to-left-1/2 duration-500">
           <DialogTitle className="sr-only">Imagen de la galería</DialogTitle>
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+          <div className="relative aspect-video w-full overflow-hidden rounded-4xl shadow-2xl border border-white/10">
             {selectedImage && (
               <NextImage
                 src={selectedImage}
                 alt="Imagen de galería"
                 fill
-                className="object-contain"
+                className="object-cover rounded-4xl"
                 priority
               />
             )}
@@ -281,5 +281,3 @@ export function Masonry({
     </div>
   );
 }
-
-// export default Masonry;
