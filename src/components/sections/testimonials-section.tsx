@@ -1,9 +1,11 @@
 "use client";
 
 import { Star } from "lucide-react";
-import SpotlightCard from "@/components/animations/spotlight-card";
+
+import { SpotlightCard } from "@/components/animations/spotlight-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Heading } from "@/components/ui/heading";
+import { DEFAULT_ANIMATION_COLOR } from "@/config/animations";
 import { testimonials } from "@/data/testimonials";
 import type { Testimonial } from "@/types/testimonial";
 
@@ -30,8 +32,8 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
 
       <SpotlightCard
-        className="h-full bg-white/60 backdrop-blur-md rounded-2xl p-4 shadow hover:shadow-xl transition-all duration-300 border border-black/10 group"
-        spotlightColor="rgba(16, 185, 129, 0.3)"
+        className="h-full bg-white rounded-2xl p-4 shadow hover:shadow-xl transition-all duration-300 border group"
+        spotlightColor={DEFAULT_ANIMATION_COLOR}
       >
         <div className="relative z-10">
           <StarRating />
@@ -40,8 +42,8 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
             "{testimonial.text}"
           </p>
 
-          <div className="flex items-center gap-4 pt-4 border-t border-black/10">
-            <Avatar className="w-12 h-12 border-2 border-black/10 shadow-md">
+          <div className="flex items-center gap-4 pt-4 border-t">
+            <Avatar className="w-12 h-12 border-2 shadow-md">
               <AvatarImage
                 src={`https://i.pravatar.cc/150?u=${testimonial.avatarIndex}`}
                 alt={testimonial.author}

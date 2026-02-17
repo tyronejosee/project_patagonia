@@ -3,9 +3,10 @@
 import { Bed, Home, Users } from "lucide-react";
 import Link from "next/link";
 
-import SpotlightCard from "@/components/animations/spotlight-card";
+import { SpotlightCard } from "@/components/animations/spotlight-card";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { DEFAULT_ANIMATION_COLOR } from "@/config/animations";
 import { type Cabin, cabins } from "@/data/cabins";
 
 interface ParallaxBannerProps {
@@ -22,10 +23,10 @@ function ParallaxBanner({ cabin }: ParallaxBannerProps) {
       <div className="absolute inset-0 bg-black/40 z-10" aria-hidden="true" />
 
       <SpotlightCard
-        className="relative z-20 w-full max-w-3xl mx-4 bg-white backdrop-blur-md border rounded-2xl p-6 md:p-8 shadow-xl transition-all duration-300"
-        spotlightColor="rgba(16, 185, 129, 0.3)"
+        className="relative z-20 w-full max-w-3xl mx-4 bg-white/80 backdrop-blur-lg border rounded-2xl p-4 shadow hover:shadow-lg transition-all duration-300"
+        spotlightColor={DEFAULT_ANIMATION_COLOR}
       >
-        <Heading level="h2" align="left" className="mb-4">
+        <Heading level="h3" align="left" className="mb-4">
           {cabin.title}
         </Heading>
 
@@ -33,7 +34,6 @@ function ParallaxBanner({ cabin }: ParallaxBannerProps) {
           {cabin.shortDescription}
         </p>
 
-        {/* Specs List */}
         <dl className="flex flex-wrap items-center gap-6 border-y border-black/10 py-4 mb-6">
           <div className="flex items-center gap-3">
             <dt className="sr-only">Capacidad</dt>
@@ -58,7 +58,6 @@ function ParallaxBanner({ cabin }: ParallaxBannerProps) {
           </div>
         </dl>
 
-        {/* Pricing & CTA */}
         <footer className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex flex-col">
             <span className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
@@ -74,10 +73,7 @@ function ParallaxBanner({ cabin }: ParallaxBannerProps) {
             </p>
           </div>
 
-          <Button
-            asChild
-            className="h-14 w-full sm:w-auto rounded-full px-10 text-lg font-semibold bg-black text-white hover:bg-gray-800 transition-transform hover:scale-105"
-          >
+          <Button asChild size="lg">
             <Link href={`/cabins/${cabin.slug}`}>Explorar Cabaña</Link>
           </Button>
         </footer>
