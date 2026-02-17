@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { CTASection } from "@/components/sections/cta-section";
+import { LocationSection } from "@/components/sections/location-section";
 
 import "./globals.css";
 
@@ -26,9 +28,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <div className="flex min-h-screen flex-col font-sans">
           <Header />
           {children}
+          <CTASection />
+          <LocationSection />
           <Footer />
         </div>
-        <WhatsAppButton />
+        <WhatsAppButton buttonText="Reservar" />
       </body>
     </html>
   );

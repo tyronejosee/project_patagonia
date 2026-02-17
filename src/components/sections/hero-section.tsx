@@ -43,19 +43,10 @@ export function HeroSection() {
           ideal para desconectar y disfrutar todo el año.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button
-            asChild
-            size="lg"
-            className="h-14 rounded-full px-10 text-lg font-semibold bg-white text-black hover:bg-gray-100 border-none transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
-          >
+          <Button asChild size="xl" variant="inverse">
             <Link href="/cabins">Explorar Cabañas</Link>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-14 rounded-full px-10 text-lg font-semibold bg-white/10 hover:bg-white/25 text-white border-white/30 backdrop-blur-md transition-all duration-300 hover:scale-105"
-          >
+          <Button asChild size="xl" variant="blur">
             <a
               href="https://app.cloudpano.com/tours/ryryRvL0l?sceneId=P4NWJ7Hmod-"
               target="_blank"
